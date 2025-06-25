@@ -57,7 +57,7 @@ export default function InvestmentGrowthChart({ className }: InvestmentGrowthCha
       return (
         <div className="bg-background border rounded-md shadow-md p-3">
           <p className="font-medium">{label}</p>
-          <p className="text-zemen-red font-medium">Value: {formatCurrency(payload[0].value)}</p>
+          <p className="text-dashen-red font-medium">Value: {formatCurrency(payload[0].value)}</p>
           <p className="text-emerald-600 text-sm">Growth: +{payload[0].payload.growth}%</p>
         </div>
       )
@@ -71,7 +71,7 @@ export default function InvestmentGrowthChart({ className }: InvestmentGrowthCha
         <div className="flex items-center justify-between">
           <div>
             <CardTitle className="flex items-center gap-2">
-              <TrendingUp className="h-5 w-5 text-zemen-red" />
+              <TrendingUp className="h-5 w-5 text-dashen-red" />
               Investment Growth
             </CardTitle>
             <CardDescription>Track your investment value over time</CardDescription>
@@ -87,7 +87,7 @@ export default function InvestmentGrowthChart({ className }: InvestmentGrowthCha
       </CardHeader>
       <CardContent>
         <div className="mb-4 grid grid-cols-2 gap-4">
-          <div className="bg-gradient-to-r from-zemen-red/10 to-amhara-teal/10 p-4 rounded-lg">
+          <div className="bg-gradient-to-r from-dashen-red/10 to-amhara-teal/10 p-4 rounded-lg">
             <p className="text-sm font-medium text-muted-foreground">Initial Value</p>
             <p className="text-2xl font-bold">{formatCurrency(initialValue)}</p>
           </div>

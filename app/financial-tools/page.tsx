@@ -85,8 +85,8 @@ export default function FinancialToolsPage() {
             <Card>
               <CardHeader>
                 <div className="flex items-center justify-between">
-                  <div className="bg-zemen-red/10 p-2 rounded-md">
-                    <Calculator className="h-5 w-5 text-zemen-red" />
+                  <div className="bg-dashen-red/10 p-2 rounded-md">
+                    <Calculator className="h-5 w-5 text-dashen-red" />
                   </div>
                 </div>
                 <CardTitle className="mt-4">Investment Calculator</CardTitle>
@@ -97,7 +97,7 @@ export default function FinancialToolsPage() {
                   <p className="text-sm text-muted-foreground">
                     Calculate potential returns and analyze different investment scenarios with our advanced tools.
                   </p>
-                  <Button className="w-full bg-zemen-red hover:bg-zemen-darkRed text-white" asChild>
+                  <Button className="w-full bg-dashen-red hover:bg-dashen-darkRed text-white" asChild>
                     <Link href="/auth/login?callbackUrl=/financial-tools">Login to Access</Link>
                   </Button>
                 </div>
@@ -109,8 +109,8 @@ export default function FinancialToolsPage() {
             <Card>
               <CardHeader>
                 <div className="flex items-center justify-between">
-                  <div className="bg-zemen-red/10 p-2 rounded-md">
-                    <TrendingUp className="h-5 w-5 text-zemen-red" />
+                  <div className="bg-dashen-red/10 p-2 rounded-md">
+                    <TrendingUp className="h-5 w-5 text-dashen-red" />
                   </div>
                 </div>
                 <CardTitle className="mt-4">Investment Growth</CardTitle>
@@ -121,7 +121,7 @@ export default function FinancialToolsPage() {
                   <p className="text-sm text-muted-foreground">
                     Visualize how your investment has grown and project future growth based on historical performance.
                   </p>
-                  <Button className="w-full bg-zemen-red hover:bg-zemen-darkRed text-white" asChild>
+                  <Button className="w-full bg-dashen-red hover:bg-dashen-darkRed text-white" asChild>
                     <Link href="/auth/login?callbackUrl=/financial-tools">Login to Access</Link>
                   </Button>
                 </div>
@@ -133,8 +133,8 @@ export default function FinancialToolsPage() {
             <Card>
               <CardHeader>
                 <div className="flex items-center justify-between">
-                  <div className="bg-zemen-red/10 p-2 rounded-md">
-                    <PiggyBank className="h-5 w-5 text-zemen-red" />
+                  <div className="bg-dashen-red/10 p-2 rounded-md">
+                    <PiggyBank className="h-5 w-5 text-dashen-red" />
                   </div>
                 </div>
                 <CardTitle className="mt-4">Savings Planner</CardTitle>
@@ -145,7 +145,7 @@ export default function FinancialToolsPage() {
                   <p className="text-sm text-muted-foreground">
                     Set investment goals and create a savings plan to achieve them within your desired timeframe.
                   </p>
-                  <Button className="w-full bg-zemen-red hover:bg-zemen-darkRed text-white" asChild>
+                  <Button className="w-full bg-dashen-red hover:bg-dashen-darkRed text-white" asChild>
                     <Link href="/auth/login?callbackUrl=/financial-tools">Login to Access</Link>
                   </Button>
                 </div>
@@ -155,28 +155,28 @@ export default function FinancialToolsPage() {
         </motion.div>
       ) : (
         <Tabs defaultValue="investment-calculator" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4 md:w-[800px] bg-zemen-red/10">
+          <TabsList className="grid w-full grid-cols-4 md:w-[800px] bg-dashen-red/10">
             <TabsTrigger
               value="investment-calculator"
-              className="data-[state=active]:bg-zemen-red data-[state=active]:text-white"
+              className="data-[state=active]:bg-dashen-red data-[state=active]:text-white"
             >
               Investment Calculator
             </TabsTrigger>
             <TabsTrigger
               value="investment-growth"
-              className="data-[state=active]:bg-zemen-red data-[state=active]:text-white"
+              className="data-[state=active]:bg-dashen-red data-[state=active]:text-white"
             >
               Investment Growth
             </TabsTrigger>
             <TabsTrigger
               value="performance"
-              className="data-[state=active]:bg-zemen-red data-[state=active]:text-white"
+              className="data-[state=active]:bg-dashen-red data-[state=active]:text-white"
             >
               Performance
             </TabsTrigger>
             <TabsTrigger
               value="savings-planner"
-              className="data-[state=active]:bg-zemen-red data-[state=active]:text-white"
+              className="data-[state=active]:bg-dashen-red data-[state=active]:text-white"
             >
               Savings Planner
             </TabsTrigger>

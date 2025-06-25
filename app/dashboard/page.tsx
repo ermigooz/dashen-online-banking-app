@@ -128,7 +128,7 @@ function DashboardContent() {
       <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
         <h1 className="text-3xl font-bold mb-2">Welcome, {user?.name || profile.full_name}</h1>
         <p className="text-muted-foreground mb-6">
-          Here's an overview of your Zemen Bank shareholding and recent activity
+          Here's an overview of your Dashen Bank shareholding and recent activity
         </p>
       </motion.div>
 
@@ -149,10 +149,10 @@ function DashboardContent() {
             className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
           >
             <motion.div variants={item}>
-              <Card className="overflow-hidden border-t-4 border-t-zemen-red">
+              <Card className="overflow-hidden border-t-4 border-t-dashen-red">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Total Shares</CardTitle>
-                  <BarChart3 className="h-4 w-4 text-zemen-red" />
+                  <BarChart3 className="h-4 w-4 text-dashen-red" />
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">{totalShares.toLocaleString()}</div>
@@ -234,19 +234,19 @@ function DashboardContent() {
                     >
                       <div
                         className={`p-2 rounded-full ${
-                          transaction.transaction_type === "purchase" ? "bg-zemen-red/10" : "bg-amhara-teal/10"
+                          transaction.transaction_type === "purchase" ? "bg-dashen-red/10" : "bg-amhara-teal/10"
                         }`}
                       >
                         {transaction.transaction_type === "purchase" ? (
                           <TrendingUp
                             className={`h-5 w-5 ${
-                              transaction.transaction_type === "purchase" ? "text-zemen-red" : "text-amhara-teal"
+                              transaction.transaction_type === "purchase" ? "text-dashen-red" : "text-amhara-teal"
                             }`}
                           />
                         ) : (
                           <DollarSign
                             className={`h-5 w-5 ${
-                              transaction.transaction_type === "purchase" ? "text-zemen-red" : "text-amhara-teal"
+                              transaction.transaction_type === "purchase" ? "text-dashen-red" : "text-amhara-teal"
                             }`}
                           />
                         )}
@@ -281,7 +281,7 @@ function DashboardContent() {
               <CardContent>
                 <div className="space-y-6">
                   <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                    <div className="bg-gradient-to-r from-zemen-red/10 to-amhara-teal/10 p-4 rounded-lg">
+                    <div className="bg-gradient-to-r from-dashen-red/10 to-amhara-teal/10 p-4 rounded-lg">
                       <p className="text-sm font-medium text-muted-foreground">Total Shares</p>
                       <p className="text-2xl font-bold">{totalShares.toLocaleString()}</p>
                     </div>
@@ -289,7 +289,7 @@ function DashboardContent() {
                       <p className="text-sm font-medium text-muted-foreground">Share Value</p>
                       <p className="text-2xl font-bold">{formatCurrency(totalValue)}</p>
                     </div>
-                    <div className="bg-gradient-to-r from-amhara-yellow/10 to-zemen-red/10 p-4 rounded-lg">
+                    <div className="bg-gradient-to-r from-amhara-yellow/10 to-dashen-red/10 p-4 rounded-lg">
                       <p className="text-sm font-medium text-muted-foreground">Purchase Date</p>
                       <p className="text-2xl font-bold">{new Date(shares[0]?.purchase_date).toLocaleDateString()}</p>
                     </div>
@@ -362,7 +362,7 @@ function DashboardContent() {
                             <span
                               className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                                 tx.transaction_type === "purchase"
-                                  ? "bg-zemen-red/10 text-zemen-red"
+                                  ? "bg-dashen-red/10 text-dashen-red"
                                   : "bg-amhara-teal/10 text-amhara-teal"
                               }`}
                             >

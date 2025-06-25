@@ -192,7 +192,7 @@ async function seedDatabase() {
     await sql`
     INSERT INTO events (title, description, event_type, start_date, end_date, location, virtual_link, is_public)
     VALUES 
-      ('Annual Shareholders Meeting', 'Join us for the annual shareholders meeting to discuss performance and future plans.', 'meeting', '2023-12-15T09:00:00Z', '2023-12-15T12:00:00Z', 'Zemen Bank Headquarters, Addis Ababa', 'https://zoom.us/j/example', true),
+      ('Annual Shareholders Meeting', 'Join us for the annual shareholders meeting to discuss performance and future plans.', 'meeting', '2023-12-15T09:00:00Z', '2023-12-15T12:00:00Z', 'Dashen Bank Headquarters, Addis Ababa', 'https://zoom.us/j/example', true),
       ('Diaspora Investment Webinar', 'Learn about new investment opportunities for diaspora shareholders.', 'webinar', '2023-11-20T15:00:00Z', '2023-11-20T16:30:00Z', NULL, 'https://zoom.us/j/example2', true),
       ('Q3 Financial Results Announcement', 'Presentation of the third quarter financial results for the fiscal year.', 'announcement', '2023-10-30T10:00:00Z', NULL, NULL, NULL, true)
   `
@@ -202,7 +202,7 @@ async function seedDatabase() {
     await sql`
     INSERT INTO faqs (question, answer, category, language, is_published)
     VALUES 
-      ('How do I purchase additional shares?', 'To purchase additional shares, you can contact our investment department at investments@zemenbank.com or visit any of our branches with your identification and shareholder number.', 'Investments', 'en', true),
+      ('How do I purchase additional shares?', 'To purchase additional shares, you can contact our investment department at investments@dashenbank.com or visit any of our branches with your identification and shareholder number.', 'Investments', 'en', true),
       ('When are dividends distributed?', 'Dividends are typically distributed semi-annually, at the end of June and December, following approval by the board of directors.', 'Dividends', 'en', true),
       ('How can I update my contact information?', 'You can update your contact information by logging into your account on the Diaspora Hub and navigating to the Profile Settings page.', 'Account Management', 'en', true),
       ('What is the minimum number of shares I can purchase?', 'The minimum number of shares for initial purchase is 10 shares. For additional purchases, there is no minimum requirement.', 'Investments', 'en', true),

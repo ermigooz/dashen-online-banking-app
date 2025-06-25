@@ -34,10 +34,10 @@ export default function DividendCalculator({ shares }: DividendCalculatorProps) 
 
   return (
     <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.3 }}>
-      <Card className="h-full overflow-hidden transition-all duration-200 hover:shadow-md border-t-4 border-t-zemen-red">
+      <Card className="h-full overflow-hidden transition-all duration-200 hover:shadow-md border-t-4 border-t-dashen-red">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Calculator className="h-5 w-5 text-zemen-red" />
+            <Calculator className="h-5 w-5 text-dashen-red" />
             <span>Dividend Calculator</span>
           </CardTitle>
           <CardDescription>Estimate your potential dividend earnings</CardDescription>
@@ -70,11 +70,11 @@ export default function DividendCalculator({ shares }: DividendCalculatorProps) 
                 max={30}
                 value={years}
                 onChange={(e) => setYears(Number.parseInt(e.target.value) || 1)}
-                className="transition-all duration-200 focus:ring-2 focus:ring-zemen-red/50"
+                className="transition-all duration-200 focus:ring-2 focus:ring-dashen-red/50"
               />
             </div>
 
-            <div className="border rounded-lg p-4 bg-gradient-to-r from-zemen-red/5 to-zemen-lightRed/5 space-y-3">
+            <div className="border rounded-lg p-4 bg-gradient-to-r from-dashen-red/5 to-dashen-lightRed/5 space-y-3">
               <div>
                 <p className="text-sm font-medium text-muted-foreground">Your Total Shares</p>
                 <p className="text-lg font-medium">{totalShares.toLocaleString()}</p>
@@ -85,13 +85,13 @@ export default function DividendCalculator({ shares }: DividendCalculatorProps) 
               </div>
               <div className="pt-2 border-t">
                 <p className="text-sm font-medium text-muted-foreground">Estimated Annual Dividend</p>
-                <p className="text-xl font-bold text-zemen-red">{formatCurrency(annualDividend)}</p>
+                <p className="text-xl font-bold text-dashen-red">{formatCurrency(annualDividend)}</p>
               </div>
               <div>
                 <p className="text-sm font-medium text-muted-foreground">
                   Total Estimated Dividend ({years} {years === 1 ? "year" : "years"})
                 </p>
-                <p className="text-xl font-bold text-zemen-red">{formatCurrency(totalDividend)}</p>
+                <p className="text-xl font-bold text-dashen-red">{formatCurrency(totalDividend)}</p>
               </div>
             </div>
           </div>

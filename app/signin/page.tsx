@@ -85,7 +85,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] bg-gradient-to-b from-amhara-green/5 to-amhara-blue/5 page-transition">
+    <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] bg-gradient-to-b from-dashen-green/5 to-dashen-blue/5 page-transition">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -96,10 +96,10 @@ export default function LoginPage() {
           <div className="absolute top-0 left-0 w-full h-1 gradient-animation" />
           <CardHeader className="space-y-1">
             <div className="flex justify-center mb-4">
-              <div className="h-16 w-16 rounded-full bg-gradient-to-r from-amhara-green to-amhara-blue flex items-center justify-center text-white text-2xl font-bold">
+              <div className="h-16 w-16 rounded-full bg-gradient-to-r from-dashen-green to-dashen-blue flex items-center justify-center text-white text-2xl font-bold">
                 <Image
-                  src="/images/amhara-bank-logo.png"
-                  alt="Amhara Bank Logo"
+                  src="/images/dashen-logo.png"
+                  alt="Dashen Bank Logo"
                   width={40}
                   height={40}
                   className="logo-glow"
@@ -107,7 +107,7 @@ export default function LoginPage() {
               </div>
             </div>
             <CardTitle className="text-2xl font-bold text-center">Welcome Back</CardTitle>
-            <CardDescription className="text-center">Sign in to access your Amhara Bank account</CardDescription>
+            <CardDescription className="text-center">Sign in to access your Dashen Bank account</CardDescription>
           </CardHeader>
           <CardContent>
             {error && (
@@ -134,14 +134,14 @@ export default function LoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="transition-all duration-200 focus:ring-2 focus:ring-amhara-green/50"
+                  className="transition-all duration-200 focus:ring-2 focus:ring-dashen-green/50"
                 />
               </div>
 
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <Label htmlFor="password">Password</Label>
-                  <Link href="/auth/forgot-password" className="text-xs text-amhara-blue hover:underline">
+                  <Link href="/auth/forgot-password" className="text-xs text-dashen-blue hover:underline">
                     Forgot password?
                   </Link>
                 </div>
@@ -151,13 +151,13 @@ export default function LoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="transition-all duration-200 focus:ring-2 focus:ring-amhara-green/50"
+                  className="transition-all duration-200 focus:ring-2 focus:ring-dashen-green/50"
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full transition-all duration-200 hover:shadow-md bg-gradient-to-r from-amhara-green to-amhara-blue hover:opacity-90"
+                className="w-full transition-all duration-200 hover:shadow-md bg-gradient-to-r from-dashen-green to-dashen-blue hover:opacity-90"
                 disabled={isLoading}
               >
                 {isLoading ? (
@@ -175,7 +175,7 @@ export default function LoginPage() {
           <CardFooter className="flex flex-col gap-4">
             <div className="text-sm text-muted-foreground text-center">
               Don't have an account?{" "}
-              <Link href="/auth/register" className="text-amhara-blue hover:underline font-medium">
+              <Link href="/auth/register" className="text-dashen-blue hover:underline font-medium">
                 Create Account
               </Link>
             </div>
@@ -191,7 +191,7 @@ export default function LoginPage() {
         </Card>
 
         <div className="mt-4 text-center">
-          <Button asChild variant="link" className="text-muted-foreground hover:text-amhara-blue">
+          <Button asChild variant="link" className="text-muted-foreground hover:text-dashen-blue">
             <Link href="/home">Continue as Guest</Link>
           </Button>
         </div>

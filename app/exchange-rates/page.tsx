@@ -66,7 +66,7 @@ export default function ExchangeRatesPage() {
     <div className="container py-8 px-4 md:px-6 lg:py-12">
       <h1 className="text-3xl font-bold mb-6">Daily Exchange Rates</h1>
       <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-        Official exchange rates provided by Zemen Bank for international transactions
+        Official exchange rates provided by Dashen Bank for international transactions
       </p>
       <div className="flex justify-end mb-6">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -89,7 +89,7 @@ export default function ExchangeRatesPage() {
           <CardHeader className="bg-muted/50 pb-4">
             <CardTitle>Daily Exchange Rates</CardTitle>
             <CardDescription>
-              Official exchange rates provided by Zemen Bank for international transactions
+              Official exchange rates provided by Dashen Bank for international transactions
             </CardDescription>
           </CardHeader>
           <CardContent className="p-0">
@@ -208,7 +208,7 @@ export default function ExchangeRatesPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <DollarSign className="h-5 w-5 text-zemen-red" />
+                <DollarSign className="h-5 w-5 text-dashen-red" />
                 Exchange Rate Information
               </CardTitle>
             </CardHeader>
@@ -218,7 +218,7 @@ export default function ExchangeRatesPage() {
                   Exchange rates are subject to change without prior notice based on international market fluctuations.
                 </p>
                 <p>
-                  For large transactions or special rates, please contact your nearest Zemen Bank branch or call our
+                  For large transactions or special rates, please contact your nearest Dashen Bank branch or call our
                   customer service.
                 </p>
                 <p className="text-sm text-muted-foreground">
@@ -231,13 +231,13 @@ export default function ExchangeRatesPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Globe className="h-5 w-5 text-zemen-red" />
+                <Globe className="h-5 w-5 text-dashen-red" />
                 International Banking Services
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <p>Zemen Bank offers comprehensive international banking services including:</p>
+                <p>Dashen Bank offers comprehensive international banking services including:</p>
                 <ul className="list-disc pl-5 space-y-1">
                   <li>Foreign currency accounts</li>
                   <li>International money transfers</li>

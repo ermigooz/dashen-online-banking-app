@@ -80,7 +80,7 @@ async function seedDatabase() {
       await sql`
         INSERT INTO events (title, description, event_type, start_date, end_date, location, virtual_link, is_public)
         VALUES 
-          ('Annual Shareholders Meeting', 'Join us for the annual shareholders meeting to discuss performance and future plans.', 'meeting', '2023-12-15T09:00:00Z', '2023-12-15T12:00:00Z', 'Zemen Bank Headquarters, Addis Ababa', 'https://zoom.us/j/example', true),
+          ('Annual Shareholders Meeting', 'Join us for the annual shareholders meeting to discuss performance and future plans.', 'meeting', '2023-12-15T09:00:00Z', '2023-12-15T12:00:00Z', 'Dashen Bank Headquarters, Addis Ababa', 'https://zoom.us/j/example', true),
           ('Diaspora Investment Webinar', 'Learn about new investment opportunities for diaspora shareholders.', 'webinar', '2023-11-20T15:00:00Z', '2023-11-20T16:30:00Z', NULL, 'https://zoom.us/j/example2', true),
           ('Q3 Financial Results Announcement', 'Presentation of the third quarter financial results for the fiscal year.', 'announcement', '2023-10-30T10:00:00Z', NULL, NULL, NULL, true)
       `

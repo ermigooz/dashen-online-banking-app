@@ -1,4 +1,4 @@
-export default function AmharaBankApp() {
+export default function DashenBankApp() {
   return (
     <div
       style={{
@@ -14,7 +14,7 @@ export default function AmharaBankApp() {
           marginBottom: "40px",
         }}
       >
-        <h1 style={{ color: "#0054A6" }}>Amhara Bank</h1>
+        <h1 style={{ color: "#0054A6" }}>Dashen Bank</h1>
         <p>Diaspora Banking Portal</p>
       </header>
 
@@ -27,7 +27,7 @@ export default function AmharaBankApp() {
             marginBottom: "20px",
           }}
         >
-          <h2>Welcome to Amhara Bank</h2>
+          <h2>Welcome to Dashen Bank</h2>
           <p>Connecting the Ethiopian diaspora with innovative banking solutions.</p>
           <button
             style={{
@@ -75,7 +75,8 @@ export default function AmharaBankApp() {
           borderTop: "1px solid #ddd",
         }}
       >
-        <p>© 2023 Amhara Bank. All rights reserved.</p>
+        <p>Disclaimer: This is a demo website for the Dashen Bank Diaspora Hub. </p>
+        <p> All information provided is for demonstration purposes only. </p>
       </footer>
     </div>
   )

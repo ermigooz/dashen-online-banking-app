@@ -12,21 +12,21 @@ import { Send, Bot, User, Loader2, RefreshCw, ThumbsUp, ThumbsDown } from "lucid
 
 // Mock AI responses
 const mockResponses = {
-  hello: "Hello! I'm Zemen Bank's AI assistant. How can I help you today?",
-  hi: "Hi there! I'm Zemen Bank's AI assistant. How can I help you today?",
-  "how are you": "I'm functioning well, thank you for asking! How can I assist you with Zemen Bank services today?",
-  "what is zemen bank":
-    "Zemen Bank is a financial institution in Ethiopia that offers various banking services including savings accounts, loans, and investment opportunities for both local and diaspora customers.",
+  hello: "Hello! I'm Dashen Bank's AI assistant. How can I help you today?",
+  hi: "Hi there! I'm Dashen Bank's AI assistant. How can I help you today?",
+  "how are you": "I'm functioning well, thank you for asking! How can I assist you with Dashen Bank services today?",
+  "what is dashen bank":
+    "Dashen Bank is a financial institution in Ethiopia that offers various banking services including savings accounts, loans, and investment opportunities for both local and diaspora customers.",
   "how can i buy shares":
-    "To purchase Zemen Bank shares, you need to complete a share purchase application form, provide identification documents, and make payment through one of our authorized channels. The minimum initial purchase is 10 shares. You can start this process online through your Diaspora Hub account or visit any Zemen Bank branch.",
+    "To purchase Dashen Bank shares, you need to complete a share purchase application form, provide identification documents, and make payment through one of our authorized channels. The minimum initial purchase is 10 shares. You can start this process online through your Diaspora Hub account or visit any Dashen Bank branch.",
   dividend:
-    "Zemen Bank typically distributes dividends semi-annually, at the end of June and December, following approval by the board of directors. The dividend amount is calculated based on the bank's profit, the number of shares you own, and the dividend rate approved by the board. You can view your dividend history in the Dashboard section of the Diaspora Hub.",
+    "Dashen Bank typically distributes dividends semi-annually, at the end of June and December, following approval by the board of directors. The dividend amount is calculated based on the bank's profit, the number of shares you own, and the dividend rate approved by the board. You can view your dividend history in the Dashboard section of the Diaspora Hub.",
   "share value":
     "The current share value is determined by the bank's board of directors based on financial performance, assets, and market conditions. The value is reviewed quarterly. For the most up-to-date share value, please check your Dashboard or contact our shareholder services department.",
   events:
-    "Zemen Bank regularly hosts events for shareholders including annual general meetings, investment webinars, and financial education workshops. You can view all upcoming events in the Events & Webinars section of the Diaspora Hub. As a shareholder, you'll receive notifications about new events and can register directly through the platform.",
+    "Dashen Bank regularly hosts events for shareholders including annual general meetings, investment webinars, and financial education workshops. You can view all upcoming events in the Events & Webinars section of the Diaspora Hub. As a shareholder, you'll receive notifications about new events and can register directly through the platform.",
   "contact support":
-    "You can contact Zemen Bank support through multiple channels: call our international line at +251 116 686 869, email us at support@zemen-hub.com, or use the contact form in the FAQs & Support section of the Diaspora Hub. Our support team is available Monday to Friday, 9:00 AM to 5:00 PM EAT (East Africa Time).",
+    "You can contact Dashen Bank support through multiple channels: call our international line at +251 116 686 869, email us at support@dashen-hub.com, or use the contact form in the FAQs & Support section of the Diaspora Hub. Our support team is available Monday to Friday, 9:00 AM to 5:00 PM EAT (East Africa Time).",
 }
 
 interface Message {
@@ -42,7 +42,7 @@ export default function ChatbotPage() {
     {
       id: "welcome",
       content:
-        "Hello! I'm Zemen Bank's AI assistant. How can I help you with your banking and investment questions today?",
+        "Hello! I'm Dashen Bank's AI assistant. How can I help you with your banking and investment questions today?",
       sender: "bot",
       timestamp: new Date(),
     },
@@ -111,7 +111,7 @@ export default function ChatbotPage() {
       {
         id: "welcome",
         content:
-          "Hello! I'm Zemen Bank's AI assistant. How can I help you with your banking and investment questions today?",
+          "Hello! I'm Dashen Bank's AI assistant. How can I help you with your banking and investment questions today?",
         sender: "bot",
         timestamp: new Date(),
       },
@@ -128,7 +128,7 @@ export default function ChatbotPage() {
       >
         <h1 className="text-3xl font-bold mb-2">AI Assistant</h1>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Ask questions about Zemen Bank services, shareholding, dividends, and more.
+          Ask questions about Dashen Bank services, shareholding, dividends, and more.
         </p>
       </motion.div>
 
@@ -142,7 +142,7 @@ export default function ChatbotPage() {
                   <AvatarFallback className="bg-primary text-primary-foreground">ZB</AvatarFallback>
                 </Avatar>
                 <div>
-                  <CardTitle className="text-lg">Zemen Bank AI Assistant</CardTitle>
+                  <CardTitle className="text-lg">Dashen Bank AI Assistant</CardTitle>
                   <CardDescription>Powered by AI</CardDescription>
                 </div>
               </div>
@@ -254,7 +254,7 @@ export default function ChatbotPage() {
           <p>
             This AI assistant is currently available only in English and uses a free LLM model.
             <br />
-            It can be trained with Zemen Bank-specific data for more accurate responses.
+            It can be trained with Dashen Bank-specific data for more accurate responses.
           </p>
         </div>
       </div>

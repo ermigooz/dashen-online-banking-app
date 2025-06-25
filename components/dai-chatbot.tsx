@@ -5,50 +5,60 @@ import type React from "react"
 import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { useAuth } from "@/components/auth-provider"
-import { Loader2, Send, X, ChevronUp, ChevronDown, MessageSquare } from "lucide-react"
+import { Loader2, Send, X, ChevronUp, ChevronDown, MessageSquare, Bot, User } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { ScrollArea } from "@/components/ui/scroll-area"
 
-type Message = {
+interface Message {
+  id: string
   role: "user" | "assistant"
   content: string
   timestamp: Date
 }
 
-// Mock responses for the ZaI chatbot
+// Mock responses for the DaI chatbot
 const mockResponses: Record<string, string> = {
-  hello: "Hello! I'm ZaI, your Zemen Bank AI assistant. How can I help you today?",
-  hi: "Hi there! I'm ZaI, your Zemen Bank AI assistant. How can I help you today?",
-  "how are you": "I'm functioning well, thank you for asking! How can I assist you with Zemen Bank services today?",
-  "what is zemen bank":
-    "Zemen Bank is a private commercial bank in Ethiopia established in 2008. It operates under a unique 'one branch' model with a main branch in Addis Ababa and service centers throughout the country, offering comprehensive banking services to individuals and businesses.",
+  hello: "Hello! I'm DaI, your Dashen Bank AI assistant. How can I help you today?",
+  hi: "Hi there! I'm DaI, your Dashen Bank AI assistant. How can I help you today?",
+  "how are you": "I'm functioning well, thank you for asking! How can I assist you with Dashen Bank services today?",
+  "what is dashen bank":
+    "Dashen Bank is a private commercial bank in Ethiopia established in 1995. It operates with a network of branches throughout the country, offering comprehensive banking services including retail banking, corporate banking, and investment services.",
   shares:
-    "Zemen Bank shares are currently trading on the secondary market. Shareholders receive dividends annually based on the bank's performance. For the most current share value, please contact our shareholder services department.",
+    "Dashen Bank shares are currently trading on the secondary market. Shareholders receive dividends annually based on the bank's performance. For the most current share value, please contact our shareholder services department.",
   dividends:
-    "Zemen Bank distributes dividends annually after the fiscal year ends. The dividend amount varies based on the bank's performance and is approved by the board of directors. Last year, shareholders received competitive returns on their investment.",
+    "Dashen Bank distributes dividends annually after the fiscal year ends. The dividend amount varies based on the bank's performance and is approved by the board of directors. Last year, shareholders received competitive dividend payments.",
   branches:
-    "Zemen Bank operates with a unique 'one branch' model, with its main branch in Addis Ababa and multiple service centers across Ethiopia. Our banking centers provide full-service banking with extended hours, and we also offer comprehensive digital banking services.",
+    "Dashen Bank operates with a network of branches across Ethiopia, with our main branch in Addis Ababa and multiple service centers throughout the country. Our banking centers provide full-service banking with extended hours and modern facilities.",
   "mobile banking":
-    "Zemen Bank offers a comprehensive mobile banking app called 'ZemenMobile' that allows you to check balances, transfer money, pay bills, and more. You can download it from the App Store or Google Play Store.",
+    "Dashen Bank offers a comprehensive mobile banking app called 'DashenMobile' that allows you to check balances, transfer money, pay bills, and more. You can download it from the App Store or Google Play Store.",
   "account types":
-    "Zemen Bank offers various account types including savings accounts, checking accounts, fixed deposit accounts, and special accounts for youth and seniors. Each has different features and benefits tailored to your needs.",
+    "Dashen Bank offers various account types including savings accounts, checking accounts, fixed deposit accounts, and special accounts for youth and seniors. Each has different features and benefits tailored to your needs.",
   loans:
-    "Zemen Bank provides various loan products including personal loans, business loans, mortgage loans, and agricultural loans. Our interest rates are competitive and terms are flexible based on your needs.",
+    "Dashen Bank provides various loan products including personal loans, business loans, mortgage loans, and agricultural loans. Our interest rates are competitive and terms are flexible based on your needs and creditworthiness.",
   contact:
-    "You can contact Zemen Bank customer service at +251-116-661-380 or email info@zemenbank.com. Our main branch is located at Kazanchis (near Zemen Building), Addis Ababa, Ethiopia.",
+    "You can contact Dashen Bank customer service at +251-116-661-380 or email info@dashenbank.com. Our main branch is located at Addis Ababa, Ethiopia.",
   investment:
-    "Zemen Bank offers various investment opportunities including fixed deposits, treasury bills, and share purchases. Our current annual return rates are competitive depending on the investment type and duration.",
+    "Dashen Bank offers various investment opportunities including fixed deposits, treasury bills, and share purchases. Our current annual return rates are competitive depending on the investment type and duration.",
   "exchange rate":
-    "Zemen Bank provides competitive foreign exchange services. Current exchange rates are updated daily on our website and mobile app. For major currencies like USD, EUR, and GBP, we offer special rates for large transactions.",
-  atm: "Zemen Bank has ATMs located throughout Ethiopia. You can withdraw cash, check your balance, and make deposits at our ATMs. Daily withdrawal limits apply based on your account type.",
+    "Dashen Bank provides competitive foreign exchange services. Current exchange rates are updated daily on our website and mobile app. For major currencies like USD, EUR, and GBP, we offer special rates for diaspora customers.",
+  atm: "Dashen Bank has ATMs located throughout Ethiopia. You can withdraw cash, check your balance, and make deposits at our ATMs. Daily withdrawal limits apply based on your account type.",
   "online banking":
-    "Zemen Bank's online banking platform 'ZemenConnect' allows you to manage your accounts, transfer funds, pay bills, and more from your computer. To register, visit our website or any banking center with your account details and valid ID.",
+    "Dashen Bank's online banking platform 'DashenConnect' allows you to manage your accounts, transfer funds, pay bills, and more from your computer. To register, visit our website or any banking center with your account details and valid ID.",
 }
 
-export default function ZaIChatbot() {
-  const [messages, setMessages] = useState<Message[]>([])
+export default function DaIChatbot() {
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      id: "1",
+      role: "assistant",
+      content: "Hello! I'm DaI, your Dashen Bank AI assistant. How can I help you today?",
+      timestamp: new Date(),
+    },
+  ])
   const [input, setInput] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
@@ -58,7 +68,7 @@ export default function ZaIChatbot() {
 
   // Quick reply options
   const quickReplies = [
-    "What services does Zemen Bank offer?",
+    "What services does Dashen Bank offer?",
     "How can I check my share value?",
     "When are dividends distributed?",
     "How do I open an account?",
@@ -80,8 +90,8 @@ export default function ZaIChatbot() {
 
     // Use the exact script content provided by Chatbase
     script.textContent = `
-    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="e_Bz-nHLJzJWVM5wsvD2v";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-  `
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="wrWT9TtczDFETRURdv7CI";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    `
 
     // Append the script to the document
     document.head.appendChild(script)
@@ -89,7 +99,7 @@ export default function ZaIChatbot() {
     // Ensure Chatbase is properly configured
     if (typeof window !== "undefined") {
       window.chatbaseConfig = {
-        chatbotId: "e_Bz-nHLJzJWVM5wsvD2v",
+        chatbotId: "wrWT9TtczDFETRURdv7CI",
         domain: "www.chatbase.co",
       }
     }
@@ -111,8 +121,9 @@ export default function ZaIChatbot() {
     if (isOpen && messages.length === 0) {
       setMessages([
         {
+          id: "1",
           role: "assistant",
-          content: "Hello! I'm ZaI, your Zemen Bank AI assistant. How can I help you today?",
+          content: "Hello! I'm DaI, your Dashen Bank AI assistant. How can I help you today?",
           timestamp: new Date(),
         },
       ])
@@ -125,6 +136,7 @@ export default function ZaIChatbot() {
 
     // Add user message to chat
     const userMessage: Message = {
+      id: Date.now().toString(),
       role: "user",
       content: message,
       timestamp: new Date(),
@@ -138,7 +150,7 @@ export default function ZaIChatbot() {
       // Simple keyword matching for mock responses
       const lowerMessage = message.toLowerCase()
       let botResponse =
-        "I'm sorry, I don't have information about that yet. Please contact our support team for assistance at +251-116-661-380 or email info@zemenbank.com."
+        "I'm sorry, I don't have information about that yet. Please contact our support team for assistance at +251-116-661-380 or email info@dashenbank.com."
 
       // Check for keyword matches in our mock responses
       for (const [keyword, response] of Object.entries(mockResponses)) {
@@ -150,28 +162,26 @@ export default function ZaIChatbot() {
 
       // Add assistant response to chat after a small delay to simulate thinking
       setTimeout(() => {
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: "assistant",
-            content: botResponse,
-            timestamp: new Date(),
-          },
-        ])
+        const assistantMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          role: "assistant",
+          content: botResponse,
+          timestamp: new Date(),
+        }
+        setMessages((prev) => [...prev, assistantMessage])
         setIsLoading(false)
       }, 1000)
     } catch (error) {
       console.error("Error getting response:", error)
 
       // Add error message to chat
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content: "I'm sorry, I'm having trouble connecting right now. Please try again in a moment.",
-          timestamp: new Date(),
-        },
-      ])
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: "assistant",
+        content: "I'm sorry, I'm having trouble connecting right now. Please try again in a moment.",
+        timestamp: new Date(),
+      }
+      setMessages((prev) => [...prev, errorMessage])
       setIsLoading(false)
     }
   }
@@ -199,7 +209,7 @@ export default function ZaIChatbot() {
       {!isOpen && (
         <Button
           onClick={toggleChat}
-          className="rounded-full w-14 h-14 shadow-lg bg-zemen-red hover:bg-zemen-darkRed text-white"
+          className="rounded-full w-14 h-14 shadow-lg bg-dashen-blue hover:bg-dashen-darkBlue text-white"
         >
           <MessageSquare className="h-6 w-6" />
         </Button>
@@ -207,17 +217,18 @@ export default function ZaIChatbot() {
 
       {/* Chat window */}
       {isOpen && (
-        <Card className="w-80 sm:w-96 shadow-lg border-zemen-red/20">
-          <CardHeader className="p-3 border-b flex flex-row items-center justify-between bg-zemen-red text-white">
+        <Card className="w-80 sm:w-96 shadow-lg border-dashen-blue/20">
+          <CardHeader className="p-3 border-b flex flex-row items-center justify-between bg-dashen-blue text-white">
             <div className="flex items-center">
               <Avatar className="h-8 w-8 mr-2">
-                <AvatarFallback className="bg-white text-zemen-red flex items-center justify-center h-full w-full font-bold">
-                  ZaI
+                <AvatarImage src="/images/dashen-logo.png" />
+                <AvatarFallback className="bg-white text-dashen-blue flex items-center justify-center h-full w-full font-bold">
+                  DaI
                 </AvatarFallback>
               </Avatar>
               <div>
-                <h3 className="font-semibold">ZaI</h3>
-                <p className="text-xs">Zemen Bank Assistant</p>
+                <h3 className="font-semibold">DaI</h3>
+                <p className="text-xs">Dashen Bank Assistant</p>
               </div>
             </div>
             <div className="flex items-center space-x-1">
@@ -243,27 +254,44 @@ export default function ZaIChatbot() {
           {!isMinimized && (
             <>
               <CardContent className="p-3 h-80 overflow-y-auto">
-                {messages.map((message, index) => (
-                  <div key={index} className={`mb-4 flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
+                {messages.map((message) => (
+                  <div key={message.id} className={`mb-4 flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
                     <div
                       className={`max-w-[80%] rounded-lg p-3 ${
-                        message.role === "user" ? "bg-zemen-red text-white" : "bg-muted"
+                        message.role === "user" ? "bg-dashen-blue text-white" : "bg-muted"
                       }`}
                     >
-                      <p className="text-sm">{message.content}</p>
-                      <p className="text-xs mt-1 opacity-70">
-                        {message.timestamp.toLocaleTimeString([], {
-                          hour: "2-digit",
-                          minute: "2-digit",
-                        })}
-                      </p>
+                      <div className="flex items-start space-x-2">
+                        {message.role === "assistant" && (
+                          <Bot className="h-4 w-4 mt-1 flex-shrink-0" />
+                        )}
+                        <div className="flex-1">
+                          <p className="text-sm">{message.content}</p>
+                          <p className="text-xs opacity-70 mt-1">
+                            {message.timestamp.toLocaleTimeString([], {
+                              hour: "2-digit",
+                              minute: "2-digit",
+                            })}
+                          </p>
+                        </div>
+                        {message.role === "user" && (
+                          <User className="h-4 w-4 mt-1 flex-shrink-0" />
+                        )}
+                      </div>
                     </div>
                   </div>
                 ))}
                 {isLoading && (
                   <div className="flex justify-start mb-4">
                     <div className="bg-muted rounded-lg p-3">
-                      <Loader2 className="h-5 w-5 animate-spin" />
+                      <div className="flex items-center space-x-2">
+                        <Bot className="h-4 w-4" />
+                        <div className="flex space-x-1">
+                          <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                          <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></div>
+                          <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -280,7 +308,7 @@ export default function ZaIChatbot() {
                         key={index}
                         variant="outline"
                         size="sm"
-                        className="text-xs py-1 h-auto text-zemen-red border-zemen-red hover:bg-zemen-red/10"
+                        className="text-xs py-1 h-auto text-dashen-blue border-dashen-blue hover:bg-dashen-blue/10"
                         onClick={() => handleSend(reply)}
                       >
                         {reply}
@@ -291,7 +319,7 @@ export default function ZaIChatbot() {
                         <Button
                           variant="outline"
                           size="sm"
-                          className="text-xs py-1 h-auto text-zemen-red border-zemen-red hover:bg-zemen-red/10"
+                          className="text-xs py-1 h-auto text-dashen-blue border-dashen-blue hover:bg-dashen-blue/10"
                         >
                           More...
                         </Button>
@@ -331,7 +359,7 @@ export default function ZaIChatbot() {
                     type="submit"
                     size="icon"
                     disabled={isLoading || !input.trim()}
-                    className="shrink-0 bg-zemen-red hover:bg-zemen-darkRed text-white"
+                    className="shrink-0 bg-dashen-blue hover:bg-dashen-darkBlue text-white"
                   >
                     <Send className="h-4 w-4" />
                   </Button>

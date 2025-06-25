@@ -191,11 +191,11 @@ export default function EventsPage() {
                       <div className="flex items-center justify-between">
                         <div className="bg-primary/10 p-2 rounded-md">
                           {event.event_type === "webinar" ? (
-                            <Video className="h-5 w-5 text-zemen-red" />
+                            <Video className="h-5 w-5 text-dashen-red" />
                           ) : event.event_type === "meeting" ? (
-                            <Calendar className="h-5 w-5 text-zemen-red" />
+                            <Calendar className="h-5 w-5 text-dashen-red" />
                           ) : (
-                            <Calendar className="h-5 w-5 text-zemen-red" />
+                            <Calendar className="h-5 w-5 text-dashen-red" />
                           )}
                         </div>
                         <div className="text-sm font-medium capitalize">{event.event_type}</div>
@@ -228,7 +228,7 @@ export default function EventsPage() {
                         {user ? (
                           <EventRegistrationButton event={event} isRegistered={registrations.includes(event.id)} />
                         ) : (
-                          <Button className="w-full bg-zemen-red hover:bg-zemen-red/90 text-white" asChild>
+                          <Button className="w-full bg-dashen-red hover:bg-dashen-red/90 text-white" asChild>
                             <Link href="/auth/login?callbackUrl=/events">Login to Register</Link>
                           </Button>
                         )}

@@ -15,13 +15,13 @@ interface ProtectedRouteClientProps {
 
 export default function ProtectedRouteClient({ children, redirectTo = "/auth/login" }: ProtectedRouteClientProps) {
   const router = useRouter()
-  const { user, loading, isAuthenticated } = useAuth()
+  const { user, loading, isAuthenticated, mounted } = useAuth()
   const [authChecked, setAuthChecked] = useState(false)
   const [isRedirecting, setIsRedirecting] = useState(false)
 
   useEffect(() => {
-    // Only proceed if loading is complete
-    if (!loading) {
+    // Only proceed if loading is complete and component is mounted
+    if (mounted && !loading) {
       console.log("ProtectedRouteClient - Auth state:", { isAuthenticated, loading })
       setAuthChecked(true)
 
@@ -30,10 +30,10 @@ export default function ProtectedRouteClient({ children, redirectTo = "/auth/log
         console.log("User not authenticated, showing login prompt")
       }
     }
-  }, [isAuthenticated, loading, isRedirecting])
+  }, [isAuthenticated, loading, isRedirecting, mounted])
 
-  // Show loading state while checking authentication
-  if (loading || !authChecked) {
+  // Show loading state while checking authentication or before mounting
+  if (!mounted || loading || !authChecked) {
     return (
       <div className="flex flex-col justify-center items-center min-h-[calc(100vh-8rem)]">
         <Loader2 className="h-8 w-8 animate-spin text-primary mb-4" />

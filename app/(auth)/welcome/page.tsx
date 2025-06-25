@@ -11,15 +11,15 @@ import { ChevronRight, ArrowRight } from "lucide-react"
 
 export default function WelcomePage() {
   const router = useRouter()
-  const { user } = useAuth()
+  const { user, mounted } = useAuth()
   const [currentSlide, setCurrentSlide] = useState(0)
 
   // Redirect if already logged in
   useEffect(() => {
-    if (user) {
+    if (mounted && user) {
       router.push("/dashboard")
     }
-  }, [user, router])
+  }, [user, router, mounted])
 
   // Auto-advance slides
   useEffect(() => {
@@ -31,22 +31,22 @@ export default function WelcomePage() {
 
   const slides = [
     {
-      title: "Welcome to Amhara Bank",
+      title: "Welcome to Dashen Bank",
       description: "Your gateway to innovative banking solutions and investment opportunities",
       image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-gbBlsZORHsMjhJSbq8Y69eyetOhAqU.png",
-      color: "from-amhara-blue/20 to-amhara-lightBlue/30",
+      color: "from-dashen-blue/20 to-dashen-lightBlue/30",
     },
     {
       title: "Invest in Your Future",
       description: "Join over 163,000 shareholders and be part of Ethiopia's growing economy",
       image: "/placeholder.svg?height=200&width=200",
-      color: "from-amhara-lightBlue/20 to-amhara-blue/30",
+      color: "from-dashen-lightBlue/20 to-dashen-blue/30",
     },
     {
       title: "Connect Globally",
       description: "Access your investments and banking services from anywhere in the world",
       image: "/placeholder.svg?height=200&width=200",
-      color: "from-amhara-blue/30 to-amhara-lightBlue/20",
+      color: "from-dashen-blue/30 to-dashen-lightBlue/20",
     },
   ]
 
@@ -54,11 +54,11 @@ export default function WelcomePage() {
     <div className="min-h-screen flex flex-col">
       {/* Animated background */}
       <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-white to-amhara-blue/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white to-dashen-blue/10" />
 
         {/* Animated circles */}
         <motion.div
-          className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-amhara-blue/10 blur-3xl"
+          className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-dashen-blue/10 blur-3xl"
           animate={{
             x: [0, 50, 0],
             y: [0, 30, 0],
@@ -70,7 +70,7 @@ export default function WelcomePage() {
           }}
         />
         <motion.div
-          className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-amhara-lightBlue/10 blur-3xl"
+          className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-dashen-lightBlue/10 blur-3xl"
           animate={{
             x: [0, -70, 0],
             y: [0, 50, 0],
@@ -82,7 +82,7 @@ export default function WelcomePage() {
           }}
         />
         <motion.div
-          className="absolute top-1/3 right-1/3 w-72 h-72 rounded-full bg-amhara-blue/10 blur-3xl"
+          className="absolute top-1/3 right-1/3 w-72 h-72 rounded-full bg-dashen-blue/10 blur-3xl"
           animate={{
             x: [0, 60, 0],
             y: [0, -40, 0],
@@ -110,14 +110,14 @@ export default function WelcomePage() {
                 className="absolute inset-0 rounded-full opacity-70"
                 style={{
                   animation: "pulse 3s ease-in-out infinite",
-                  boxShadow: "0 0 20px 10px rgba(0, 84, 166, 0.5)",
+                  boxShadow: "0 0 20px 10px rgba(59, 130, 246, 0.6)",
                 }}
               />
               <Image
-                src="/images/amhara-bank-logo.png"
-                alt="Amhara Bank Logo"
-                width={120}
-                height={120}
+                src="/images/dashen-logo.png"
+                alt="Dashen Bank Logo"
+                width={140}
+                height={140}
                 className="logo-glow relative z-10"
               />
             </motion.div>
@@ -149,7 +149,7 @@ export default function WelcomePage() {
                       className="mx-auto"
                     />
                   </div>
-                  <h2 className="text-2xl font-bold mb-2 text-amhara-blue">{slide.title}</h2>
+                  <h2 className="text-2xl font-bold mb-2 text-dashen-blue">{slide.title}</h2>
                   <p className="text-muted-foreground mb-6">{slide.description}</p>
                 </div>
               </motion.div>
@@ -162,7 +162,7 @@ export default function WelcomePage() {
                   key={index}
                   onClick={() => setCurrentSlide(index)}
                   className={`w-2 h-2 rounded-full transition-all ${
-                    currentSlide === index ? "bg-amhara-blue w-6" : "bg-amhara-blue/30"
+                    currentSlide === index ? "bg-dashen-blue w-6" : "bg-dashen-blue/30"
                   }`}
                 />
               ))}
@@ -173,7 +173,7 @@ export default function WelcomePage() {
           <div className="space-y-4">
             <Button
               asChild
-              className="w-full bg-gradient-to-r from-amhara-blue to-amhara-lightBlue hover:opacity-90 text-white h-12"
+              className="w-full bg-gradient-to-r from-dashen-blue to-dashen-lightBlue hover:opacity-90 text-white h-12"
             >
               <Link href="/auth/login">
                 Sign In
@@ -183,7 +183,7 @@ export default function WelcomePage() {
             <Button
               asChild
               variant="outline"
-              className="w-full border-amhara-blue text-amhara-blue hover:bg-amhara-blue/10 h-12"
+              className="w-full border-dashen-blue text-dashen-blue hover:bg-dashen-blue/10 h-12"
             >
               <Link href="/auth/register">
                 Create Account
@@ -191,7 +191,7 @@ export default function WelcomePage() {
               </Link>
             </Button>
             <div className="text-center mt-4">
-              <Button asChild variant="link" className="text-amhara-blue hover:text-amhara-lightBlue">
+              <Button asChild variant="link" className="text-dashen-blue hover:text-dashen-lightBlue">
                 <Link href="/home">
                   Continue as Guest
                   <ArrowRight className="ml-1 h-4 w-4" />
@@ -204,7 +204,8 @@ export default function WelcomePage() {
 
       {/* Footer */}
       <div className="py-4 text-center text-sm text-muted-foreground">
-        <p>© {new Date().getFullYear()} Amhara Bank. All rights reserved.</p>
+        <p>Disclaimer: This is a demo website for the Dashen Bank Diaspora Hub. </p>
+        <p> All information provided is for demonstration purposes only. </p>
       </div>
     </div>
   )

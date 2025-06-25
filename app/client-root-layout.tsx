@@ -2,10 +2,10 @@
 
 import type React from "react"
 import { AuthProvider } from "@/components/auth-provider"
-import AuthDebugger from "@/components/auth/auth-debugger"
+// import AuthDebugger from "@/components/auth/auth-debugger" // Removed
 import Header from "@/components/header"
 import { Footer } from "@/components/footer"
-import ZaIChatbot from "@/components/zai-chatbot"
+import DaIChatbot from "@/components/dai-chatbot"
 import ChatbaseWidget from "@/components/chatbase-widget"
 import { useEffect, useState } from "react"
 import { checkRequiredEnvVars } from "@/lib/env-checker"
@@ -24,10 +24,8 @@ function ClientRootLayout({
   const [isProduction, setIsProduction] = useState(false)
 
   useEffect(() => {
-    // Check if we're in production by looking at the hostname
-    const hostname = window.location.hostname
-    const isProd = !hostname.includes("localhost") && !hostname.includes("127.0.0.1")
-    setIsProduction(isProd)
+    // Check if we're in production
+    setIsProduction(process.env.NODE_ENV === "production")
   }, [])
 
   return (
@@ -39,10 +37,10 @@ function ClientRootLayout({
       {/* Always include Chatbase widget */}
       <ChatbaseWidget />
 
-      {/* Only show ZaI chatbot in development */}
-      {!isProduction && <ZaIChatbot />}
+      {/* Only show DaI chatbot in development */}
+      {!isProduction && <DaIChatbot />}
 
-      <AuthDebugger />
+      {/* <AuthDebugger /> Removed */}
     </AuthProvider>
   )
 }

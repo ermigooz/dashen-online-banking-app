@@ -60,7 +60,7 @@ export default function SavingsPlanner({ className, showHeader = true, height = 
       {showHeader && (
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <PiggyBank className="h-5 w-5 text-zemen-red" />
+            <PiggyBank className="h-5 w-5 text-dashen-red" />
             Savings Planner
           </CardTitle>
           <CardDescription>Plan your savings to achieve your investment goals</CardDescription>
@@ -118,7 +118,7 @@ export default function SavingsPlanner({ className, showHeader = true, height = 
             />
           </div>
 
-          <Button onClick={calculateProjection} className="w-full bg-zemen-red hover:bg-zemen-darkRed text-white">
+          <Button onClick={calculateProjection} className="w-full bg-dashen-red hover:bg-dashen-darkRed text-white">
             <Calculator className="h-4 w-4 mr-2" />
             Calculate Projection
           </Button>

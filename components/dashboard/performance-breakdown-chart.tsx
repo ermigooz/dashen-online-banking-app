@@ -62,7 +62,7 @@ export default function PerformanceBreakdownChart({ className }: PerformanceBrea
     <Card className={className}>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <PieChartIcon className="h-5 w-5 text-zemen-blue" />
+          <PieChartIcon className="h-5 w-5 text-dashen-blue" />
           Performance Breakdown
         </CardTitle>
         <CardDescription>Analysis of your investment returns</CardDescription>

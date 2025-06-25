@@ -1,4 +1,4 @@
-# Zemen Bank Diaspora Portal
+# Dashen Bank Diaspora Portal
 
 A comprehensive banking portal designed specifically for the Ethiopian diaspora community, providing access to banking services, exchange rates, investment tools, and community features.
 
@@ -31,6 +31,12 @@ A comprehensive banking portal designed specifically for the Ethiopian diaspora 
 - ✅ Created comprehensive environment variable documentation
 - ✅ Added better error messages and guidance
 - ✅ Made database operations optional during development
+
+### 4. **Rebranding to Dashen Bank**
+- ✅ Updated all references from Dashen Bank to Dashen Bank
+- ✅ Replaced logo with Dashen Bank branding
+- ✅ Updated chatbot responses and content
+- ✅ Modified contact information and links
 
 ## 📋 Prerequisites
 
@@ -199,7 +205,7 @@ npm run dev
 
 ## 📄 License
 
-This project is proprietary software for Zemen Bank.
+This project is proprietary software for Dashen Bank.
 
 ---
 

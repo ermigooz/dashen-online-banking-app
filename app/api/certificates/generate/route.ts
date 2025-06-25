@@ -36,18 +36,18 @@ export async function POST(request: Request) {
       
       This certifies that ${profile[0].full_name} is the registered holder of
       ${shares.reduce((sum, share) => sum + share.total_shares, 0)} shares of
-      Zemen Bank, with a total value of $${shares.reduce((sum, share) => sum + Number(share.share_value), 0).toFixed(2)}.
+      Dashen Bank, with a total value of $${shares.reduce((sum, share) => sum + Number(share.share_value), 0).toFixed(2)}.
       
       Date of Issue: ${new Date().toLocaleDateString()}
       
-      This certificate is issued in accordance with the Articles of Association of Zemen Bank.
+      This certificate is issued in accordance with the Articles of Association of Dashen Bank.
     `
 
     // Return the certificate as a downloadable file
     return new NextResponse(certificateText, {
       headers: {
         "Content-Type": "text/plain",
-        "Content-Disposition": `attachment; filename="zemen-share-certificate-${session.user.id}.txt"`,
+        "Content-Disposition": `attachment; filename="dashen-share-certificate-${session.user.id}.txt"`,
       },
     })
   } catch (error) {

@@ -54,7 +54,7 @@ export default function ShareCertificate({ profile, shares }: ShareCertificatePr
       // Create a fake download
       const a = document.createElement("a")
       a.href = "#"
-      a.download = `zemen-bank-share-certificate-${profile.id}.pdf`
+      a.download = `dashen-bank-share-certificate-${profile.id}.pdf`
       document.body.appendChild(a)
       a.click()
       document.body.removeChild(a)
@@ -72,10 +72,10 @@ export default function ShareCertificate({ profile, shares }: ShareCertificatePr
 
   return (
     <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.3 }}>
-      <Card className="h-full overflow-hidden transition-all duration-200 hover:shadow-md border-t-4 border-t-zemen-red">
+      <Card className="h-full overflow-hidden transition-all duration-200 hover:shadow-md border-t-4 border-t-dashen-red">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <FileDown className="h-5 w-5 text-zemen-red" />
+            <FileDown className="h-5 w-5 text-dashen-red" />
             Share Certificate
           </CardTitle>
           <CardDescription>Generate and download your official share certificate</CardDescription>
@@ -101,9 +101,9 @@ export default function ShareCertificate({ profile, shares }: ShareCertificatePr
               </div>
             </div>
 
-            <div className="border rounded-lg p-4 bg-gradient-to-r from-zemen-red/5 to-zemen-lightRed/5">
+            <div className="border rounded-lg p-4 bg-gradient-to-r from-dashen-red/5 to-dashen-lightRed/5">
               <p className="text-sm text-muted-foreground">
-                Your share certificate is an official document that confirms your ownership of shares in Zemen Bank. You
+                Your share certificate is an official document that confirms your ownership of shares in Dashen Bank. You
                 can download it for your records or for official purposes.
               </p>
             </div>
@@ -113,7 +113,7 @@ export default function ShareCertificate({ profile, shares }: ShareCertificatePr
           <Button
             onClick={generateCertificate}
             disabled={isGenerating || totalShares === 0}
-            className="w-full bg-zemen-red hover:bg-zemen-darkRed"
+            className="w-full bg-dashen-red hover:bg-dashen-darkRed"
           >
             {isGenerating ? (
               <>

@@ -51,11 +51,11 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Zemen Bank colors
-        zemen: {
-          red: "#D81B60", // Primary red/magenta color
-          darkRed: "#B71C5A", // Darker shade for hover states
-          lightRed: "#E91E63", // Lighter shade for accents
+        // Dashen Bank colors - Blue theme
+        dashen: {
+          blue: "#2563EB", // Primary blue color
+          darkBlue: "#1D4ED8", // Darker shade for hover states
+          lightBlue: "#3B82F6", // Lighter shade for accents
           gray: "#58595B", // Gray for text and secondary elements
           lightGray: "#F5F5F5", // Light gray for backgrounds
         },

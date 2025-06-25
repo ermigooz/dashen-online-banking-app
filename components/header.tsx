@@ -19,9 +19,17 @@ import { LogOut, User, Menu, X, Bell, Calendar, BarChart3, HelpCircle, CreditCar
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
 import NotificationBell from "./notifications/notification-bell"
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 
 export default function Header() {
-  const { user, loading, logout } = useAuth()
+  const { user, loading, logout, mounted } = useAuth()
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname()
@@ -65,8 +73,8 @@ export default function Header() {
             >
               <div className="h-8 w-8 relative logo-glow">
                 <Image
-                  src="/images/zemen-logo.png"
-                  alt="Zemen Bank Logo"
+                  src="/images/dashen-logo.png"
+                  alt="Dashen Bank Logo"
                   width={32}
                   height={32}
                   className="w-8 h-8 object-contain"
@@ -78,9 +86,9 @@ export default function Header() {
               initial={{ x: -10, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.1 }}
-              className="bg-gradient-to-r from-zemen-red to-zemen-lightRed bg-clip-text text-transparent"
+              className="bg-gradient-to-r from-dashen-blue to-dashen-lightBlue bg-clip-text text-transparent"
             >
-              Zemen Bank
+              Dashen Bank
             </motion.span>
           </Link>
         </div>
@@ -99,7 +107,7 @@ export default function Header() {
                 className={cn(
                   "flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors",
                   pathname === item.href
-                    ? "bg-zemen-red/10 text-zemen-red"
+                    ? "bg-dashen-blue/10 text-dashen-blue"
                     : "text-muted-foreground hover:text-foreground hover:bg-accent",
                 )}
               >
@@ -111,7 +119,7 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          {loading ? (
+          {!mounted || loading ? (
             <div className="h-8 w-8 rounded-full bg-muted animate-pulse" />
           ) : user ? (
             <>
@@ -132,7 +140,7 @@ export default function Header() {
                     <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                       <Avatar className="h-8 w-8">
                         <AvatarImage src="/placeholder.svg?height=32&width=32" />
-                        <AvatarFallback className="bg-gradient-to-r from-zemen-red to-zemen-lightRed text-white">
+                        <AvatarFallback className="bg-gradient-to-r from-dashen-blue to-dashen-lightBlue text-white">
                           {user.name?.charAt(0).toUpperCase() || "U"}
                         </AvatarFallback>
                       </Avatar>
@@ -167,7 +175,7 @@ export default function Header() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
-              <Button asChild variant="default" size="sm" className="bg-zemen-red hover:bg-zemen-darkRed text-white">
+              <Button asChild variant="default" size="sm" className="bg-dashen-blue hover:bg-dashen-darkBlue text-white">
                 <Link href="/auth/login">Login</Link>
               </Button>
             </motion.div>
@@ -195,32 +203,26 @@ export default function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden border-t"
+            className="md:hidden bg-white border-t"
           >
-            <div className="container py-3 space-y-1">
-              {navItems.map((item, index) => (
-                <motion.div
+            <nav className="container py-4 space-y-2">
+              {navItems.map((item) => (
+                <Link
                   key={item.href}
-                  initial={{ x: -10, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.2, delay: index * 0.05 }}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={cn(
+                    "flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                    pathname === item.href
+                      ? "bg-dashen-blue/10 text-dashen-blue"
+                      : "text-muted-foreground hover:text-foreground hover:bg-accent",
+                  )}
                 >
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      "flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors",
-                      pathname === item.href
-                        ? "bg-zemen-red/10 text-zemen-red"
-                        : "text-muted-foreground hover:text-foreground hover:bg-accent",
-                    )}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <item.icon className="h-4 w-4 mr-2" />
-                    {item.label}
-                  </Link>
-                </motion.div>
+                  <item.icon className="h-4 w-4 mr-2" />
+                  {item.label}
+                </Link>
               ))}
-            </div>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>

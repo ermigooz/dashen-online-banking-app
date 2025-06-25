@@ -10,7 +10,7 @@ export async function POST() {
         description:
           "Join us for our annual shareholder meeting where we will discuss company performance, future plans, and answer your questions.",
         event_type: "Meeting",
-        location: "Zemen Bank Headquarters, Addis Ababa",
+        location: "Dashen Bank Headquarters, Addis Ababa",
         start_date: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days from now
         end_date: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000 + 3 * 60 * 60 * 1000), // 3 hours after start
         is_public: true,

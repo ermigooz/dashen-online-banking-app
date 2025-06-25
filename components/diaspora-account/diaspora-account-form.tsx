@@ -189,7 +189,7 @@ export default function DiasporaAccountForm() {
             </div>
           </CardContent>
           <CardFooter className="flex justify-center border-t pt-6">
-            <Button className="bg-zemen-red hover:bg-zemen-red/90">Return to Homepage</Button>
+            <Button className="bg-dashen-red hover:bg-dashen-red/90">Return to Homepage</Button>
           </CardFooter>
         </Card>
       </motion.div>
@@ -212,25 +212,25 @@ export default function DiasporaAccountForm() {
             </div>
             <div className="flex items-center gap-1 text-sm font-medium">
               <span
-                className={`h-8 w-8 rounded-full flex items-center justify-center ${currentStep >= 1 ? "bg-zemen-red text-white" : "bg-muted text-muted-foreground"}`}
+                className={`h-8 w-8 rounded-full flex items-center justify-center ${currentStep >= 1 ? "bg-dashen-red text-white" : "bg-muted text-muted-foreground"}`}
               >
                 1
               </span>
               <span className="h-px w-4 bg-muted"></span>
               <span
-                className={`h-8 w-8 rounded-full flex items-center justify-center ${currentStep >= 2 ? "bg-zemen-red text-white" : "bg-muted text-muted-foreground"}`}
+                className={`h-8 w-8 rounded-full flex items-center justify-center ${currentStep >= 2 ? "bg-dashen-red text-white" : "bg-muted text-muted-foreground"}`}
               >
                 2
               </span>
               <span className="h-px w-4 bg-muted"></span>
               <span
-                className={`h-8 w-8 rounded-full flex items-center justify-center ${currentStep >= 3 ? "bg-zemen-red text-white" : "bg-muted text-muted-foreground"}`}
+                className={`h-8 w-8 rounded-full flex items-center justify-center ${currentStep >= 3 ? "bg-dashen-red text-white" : "bg-muted text-muted-foreground"}`}
               >
                 3
               </span>
               <span className="h-px w-4 bg-muted"></span>
               <span
-                className={`h-8 w-8 rounded-full flex items-center justify-center ${currentStep >= 4 ? "bg-zemen-red text-white" : "bg-muted text-muted-foreground"}`}
+                className={`h-8 w-8 rounded-full flex items-center justify-center ${currentStep >= 4 ? "bg-dashen-red text-white" : "bg-muted text-muted-foreground"}`}
               >
                 4
               </span>
@@ -595,7 +595,7 @@ export default function DiasporaAccountForm() {
                         <div className="space-y-1 leading-none">
                           <FormLabel>I accept the terms and conditions</FormLabel>
                           <FormDescription>
-                            By checking this box, you agree to Zemen Bank's terms and conditions, privacy policy, and
+                            By checking this box, you agree to Dashen Bank's terms and conditions, privacy policy, and
                             consent to the processing of your personal data in accordance with Ethiopian banking
                             regulations.
                           </FormDescription>
@@ -623,7 +623,7 @@ export default function DiasporaAccountForm() {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 ) : (
-                  <Button type="submit" className="bg-zemen-red hover:bg-zemen-red/90" disabled={isSubmitting}>
+                  <Button type="submit" className="bg-dashen-red hover:bg-dashen-red/90" disabled={isSubmitting}>
                     {isSubmitting ? (
                       <>
                         <div className="h-4 w-4 rounded-full border-2 border-current border-t-transparent animate-spin mr-2"></div>

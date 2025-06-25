@@ -63,7 +63,7 @@ export default function InvestmentGrowthChart({
       return (
         <div className="bg-background border rounded-md shadow-md p-3">
           <p className="font-medium">{label}</p>
-          <p className="text-zemen-red font-medium">Value: {formatCurrency(payload[0].value)}</p>
+          <p className="text-dashen-red font-medium">Value: {formatCurrency(payload[0].value)}</p>
           <p className="text-emerald-600 text-sm">Growth: +{payload[0].payload.growth}%</p>
         </div>
       )
@@ -78,7 +78,7 @@ export default function InvestmentGrowthChart({
           <div className="flex items-center justify-between">
             <div>
               <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-zemen-red" />
+                <TrendingUp className="h-5 w-5 text-dashen-red" />
                 Investment Growth
               </CardTitle>
               <CardDescription>Track your investment value over time</CardDescription>
@@ -95,11 +95,11 @@ export default function InvestmentGrowthChart({
       )}
       <CardContent>
         <div className="mb-4 grid grid-cols-2 gap-4">
-          <div className="bg-gradient-to-r from-zemen-red/10 to-zemen-lightRed/10 p-4 rounded-lg">
+          <div className="bg-gradient-to-r from-dashen-red/10 to-dashen-lightRed/10 p-4 rounded-lg">
             <p className="text-sm font-medium text-muted-foreground">Initial Value</p>
             <p className="text-2xl font-bold">{formatCurrency(initialValue)}</p>
           </div>
-          <div className="bg-gradient-to-r from-zemen-lightRed/10 to-zemen-red/20 p-4 rounded-lg">
+          <div className="bg-gradient-to-r from-dashen-lightRed/10 to-dashen-red/20 p-4 rounded-lg">
             <p className="text-sm font-medium text-muted-foreground">Current Value</p>
             <p className="text-2xl font-bold">{formatCurrency(currentValue)}</p>
             <p className="text-sm text-emerald-600">+{totalGrowth.toFixed(1)}% growth</p>

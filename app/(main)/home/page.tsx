@@ -80,8 +80,8 @@ export default function HomePage() {
                 }}
               />
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zemen_logo-dMRcp6Y7guFgX2H5GUbZN2waKXfVpI.png"
-                alt="Zemen Bank Logo"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dashen_logo-dMRcp6Y7guFgX2H5GUbZN2waKXfVpI.png"
+                alt="Dashen Bank Logo"
                 width={120}
                 height={120}
                 className="logo-glow relative z-10"
@@ -90,7 +90,7 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-            <span className="zemen-gradient-text">Zemen Bank</span>
+            <span className="dashen-gradient-text">Dashen Bank</span>
             <br />
             <span>Diaspora Hub</span>
           </h1>
@@ -100,7 +100,7 @@ export default function HomePage() {
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" className="gap-2 bg-zemen-red hover:bg-zemen-red/90 text-white rounded-full px-8">
+            <Button asChild size="lg" className="gap-2 bg-dashen-red hover:bg-dashen-red/90 text-white rounded-full px-8">
               <Link href="/auth/login">
                 Login to Dashboard
                 <ArrowRight className="h-4 w-4" />
@@ -110,7 +110,7 @@ export default function HomePage() {
               asChild
               variant="outline"
               size="lg"
-              className="border-amhara-lightBlue text-zemen-red hover:bg-zemen-red/10 rounded-full px-8"
+              className="border-amhara-lightBlue text-dashen-red hover:bg-dashen-red/10 rounded-full px-8"
             >
               <Link href="/events">View Upcoming Events</Link>
             </Button>
@@ -120,7 +120,7 @@ export default function HomePage() {
               size="lg"
               className="gap-2 bg-amhara-lightBlue hover:bg-amhara-lightBlue/90 text-white rounded-full px-8"
             >
-              <a href="https://zemenbank.com/about" target="_blank" rel="noopener noreferrer">
+              <a href="https://dashenbank.com/about" target="_blank" rel="noopener noreferrer">
                 Learn More About Us
                 <ExternalLink className="h-4 w-4 ml-1" />
               </a>

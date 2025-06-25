@@ -69,14 +69,14 @@ export default function PerformanceBreakdownChart({
       {showHeader && (
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <PieChartIcon className="h-5 w-5 text-zemen-red" />
+            <PieChartIcon className="h-5 w-5 text-dashen-red" />
             Performance Breakdown
           </CardTitle>
           <CardDescription>Analysis of your investment returns</CardDescription>
         </CardHeader>
       )}
       <CardContent>
-        <div className="mb-4 p-4 rounded-lg bg-gradient-to-r from-zemen-red/10 to-zemen-lightRed/10">
+        <div className="mb-4 p-4 rounded-lg bg-gradient-to-r from-dashen-red/10 to-dashen-lightRed/10">
           <p className="text-sm font-medium text-muted-foreground">Total Performance Gain</p>
           <p className="text-2xl font-bold">{formatCurrency(totalPerformance)}</p>
           <p className="text-sm text-emerald-600">

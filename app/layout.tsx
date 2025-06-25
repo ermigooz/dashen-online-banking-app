@@ -10,11 +10,11 @@ import Script from "next/script"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Zemen Bank - Diaspora Portal",
-  description: "Connecting the Ethiopian diaspora with Zemen Bank's services",
+  title: "Dashen Bank - Diaspora Portal",
+  description: "Connecting the Ethiopian diaspora with Dashen Bank's services",
   icons: {
     icon: "/favicon.ico",
-    apple: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zemen_logo-dMRcp6Y7guFgX2H5GUbZN2waKXfVpI.png",
+    apple: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dashen_logo-dMRcp6Y7guFgX2H5GUbZN2waKXfVpI.png",
   },
   generator: "v0.dev",
 }

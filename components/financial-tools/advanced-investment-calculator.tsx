@@ -173,8 +173,8 @@ export default function AdvancedInvestmentCalculator({ className }: AdvancedInve
       return (
         <div className="bg-white p-4 border rounded-md shadow-md">
           <p className="font-bold">{label}</p>
-          <p className="text-zemen-red">Value: {formatCurrency(payload[0].value)}</p>
-          {payload.length > 1 && <p className="text-zemen-lightRed">Comparison: {formatCurrency(payload[1].value)}</p>}
+          <p className="text-dashen-red">Value: {formatCurrency(payload[0].value)}</p>
+          {payload.length > 1 && <p className="text-dashen-lightRed">Comparison: {formatCurrency(payload[1].value)}</p>}
           {payload[0].payload.inflationAdjustedValue && (
             <p className="text-gray-600">
               Inflation Adjusted: {formatCurrency(payload[0].payload.inflationAdjustedValue)}
@@ -190,7 +190,7 @@ export default function AdvancedInvestmentCalculator({ className }: AdvancedInve
     <Card className={className}>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <Calculator className="h-5 w-5 text-zemen-red" />
+          <Calculator className="h-5 w-5 text-dashen-red" />
           Advanced Investment Calculator
         </CardTitle>
         <CardDescription>Plan your investment strategy with detailed projections and scenario analysis</CardDescription>
@@ -198,17 +198,17 @@ export default function AdvancedInvestmentCalculator({ className }: AdvancedInve
 
       <CardContent>
         <Tabs defaultValue="parameters" className="space-y-4">
-          <TabsList className="grid w-full grid-cols-3 bg-zemen-red/10">
-            <TabsTrigger value="parameters" className="data-[state=active]:bg-zemen-red data-[state=active]:text-white">
+          <TabsList className="grid w-full grid-cols-3 bg-dashen-red/10">
+            <TabsTrigger value="parameters" className="data-[state=active]:bg-dashen-red data-[state=active]:text-white">
               Parameters
             </TabsTrigger>
             <TabsTrigger
               value="projections"
-              className="data-[state=active]:bg-zemen-red data-[state=active]:text-white"
+              className="data-[state=active]:bg-dashen-red data-[state=active]:text-white"
             >
               Projections
             </TabsTrigger>
-            <TabsTrigger value="comparison" className="data-[state=active]:bg-zemen-red data-[state=active]:text-white">
+            <TabsTrigger value="comparison" className="data-[state=active]:bg-dashen-red data-[state=active]:text-white">
               Scenario Analysis
             </TabsTrigger>
           </TabsList>
@@ -312,7 +312,7 @@ export default function AdvancedInvestmentCalculator({ className }: AdvancedInve
               <Label htmlFor="reinvest-dividends">Reinvest Dividends</Label>
             </div>
 
-            <Button onClick={calculateProjection} className="w-full bg-zemen-red hover:bg-zemen-darkRed text-white">
+            <Button onClick={calculateProjection} className="w-full bg-dashen-red hover:bg-dashen-darkRed text-white">
               <Calculator className="h-4 w-4 mr-2" />
               Calculate Projection
             </Button>
@@ -322,22 +322,22 @@ export default function AdvancedInvestmentCalculator({ className }: AdvancedInve
             {projectionData.length > 0 ? (
               <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <div className="bg-zemen-red/10 p-4 rounded-lg">
+                  <div className="bg-dashen-red/10 p-4 rounded-lg">
                     <p className="text-sm font-medium text-muted-foreground">Future Value</p>
                     <p className="text-2xl font-bold">{formatCurrency(summaryData.futureValue)}</p>
                   </div>
 
-                  <div className="bg-zemen-lightRed/10 p-4 rounded-lg">
+                  <div className="bg-dashen-lightRed/10 p-4 rounded-lg">
                     <p className="text-sm font-medium text-muted-foreground">Total Contributions</p>
                     <p className="text-2xl font-bold">{formatCurrency(summaryData.totalContributions)}</p>
                   </div>
 
-                  <div className="bg-zemen-red/10 p-4 rounded-lg">
+                  <div className="bg-dashen-red/10 p-4 rounded-lg">
                     <p className="text-sm font-medium text-muted-foreground">Investment Growth</p>
                     <p className="text-2xl font-bold">{formatCurrency(summaryData.totalGrowth)}</p>
                   </div>
 
-                  <div className="bg-zemen-lightRed/10 p-4 rounded-lg">
+                  <div className="bg-dashen-lightRed/10 p-4 rounded-lg">
                     <p className="text-sm font-medium text-muted-foreground">Inflation Adjusted Value</p>
                     <p className="text-2xl font-bold">{formatCurrency(summaryData.inflationAdjustedValue)}</p>
                   </div>
@@ -486,11 +486,11 @@ export default function AdvancedInvestmentCalculator({ className }: AdvancedInve
 
       {projectionData.length > 0 && (
         <CardFooter className="flex justify-between border-t pt-6">
-          <Button variant="outline" className="text-zemen-red border-zemen-red hover:bg-zemen-red/10">
+          <Button variant="outline" className="text-dashen-red border-dashen-red hover:bg-dashen-red/10">
             <Download className="h-4 w-4 mr-2" />
             Export Data
           </Button>
-          <Button variant="outline" className="text-zemen-red border-zemen-red hover:bg-zemen-red/10">
+          <Button variant="outline" className="text-dashen-red border-dashen-red hover:bg-dashen-red/10">
             <Share2 className="h-4 w-4 mr-2" />
             Share Results
           </Button>

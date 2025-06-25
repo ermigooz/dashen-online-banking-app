@@ -17,7 +17,7 @@ const faqData = [
       {
         question: "How do I purchase additional shares?",
         answer:
-          "To purchase additional shares, you can contact our investment department at investments@zemenbank.com or visit any of our branches with your identification and shareholder number.",
+          "To purchase additional shares, you can contact our investment department at investments@dashenbank.com or visit any of our branches with your identification and shareholder number.",
       },
       {
         question: "What is the minimum number of shares I can purchase?",
@@ -136,7 +136,7 @@ export default function FAQPage() {
       >
         <h1 className="text-3xl font-bold mb-2">FAQs & Support</h1>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Find answers to common questions about Zemen Bank shareholding, dividends, and more. If you need additional
+          Find answers to common questions about Dashen Bank shareholding, dividends, and more. If you need additional
           help, our support team is ready to assist you.
         </p>
       </motion.div>
@@ -199,7 +199,7 @@ export default function FAQPage() {
                         <AccordionItem value={`item-${index}`} className="border rounded-lg px-4">
                           <AccordionTrigger className="text-left">
                             <div className="flex items-start">
-                              <HelpCircle className="h-5 w-5 mr-2 flex-shrink-0 text-zemen-blue" />
+                              <HelpCircle className="h-5 w-5 mr-2 flex-shrink-0 text-dashen-blue" />
                               <span>{faq.question}</span>
                             </div>
                           </AccordionTrigger>
@@ -230,7 +230,7 @@ export default function FAQPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Mail className="h-5 w-5 mr-2 text-zemen-blue" />
+                  <Mail className="h-5 w-5 mr-2 text-dashen-blue" />
                   Email Support
                 </CardTitle>
                 <CardDescription>Send us an email and we'll get back to you within 24 hours</CardDescription>
@@ -277,7 +277,7 @@ export default function FAQPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <Phone className="h-5 w-5 mr-2 text-zemen-blue" />
+                    <Phone className="h-5 w-5 mr-2 text-dashen-blue" />
                     Phone Support
                   </CardTitle>
                   <CardDescription>Call our dedicated shareholder support line</CardDescription>
@@ -286,7 +286,7 @@ export default function FAQPage() {
                   <div className="space-y-4">
                     <div className="flex items-center">
                       <div className="bg-primary/10 p-2 rounded-full mr-3">
-                        <Phone className="h-5 w-5 text-zemen-blue" />
+                        <Phone className="h-5 w-5 text-dashen-blue" />
                       </div>
                       <div>
                         <p className="font-medium">International</p>
@@ -295,7 +295,7 @@ export default function FAQPage() {
                     </div>
                     <div className="flex items-center">
                       <div className="bg-primary/10 p-2 rounded-full mr-3">
-                        <Phone className="h-5 w-5 text-zemen-blue" />
+                        <Phone className="h-5 w-5 text-dashen-blue" />
                       </div>
                       <div>
                         <p className="font-medium">Ethiopia (Toll-Free)</p>
@@ -362,7 +362,7 @@ export default function FAQPage() {
             <Card>
               <CardHeader>
                 <CardTitle>Shareholder Guide</CardTitle>
-                <CardDescription>A comprehensive guide to being a Zemen Bank shareholder</CardDescription>
+                <CardDescription>A comprehensive guide to being a Dashen Bank shareholder</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">

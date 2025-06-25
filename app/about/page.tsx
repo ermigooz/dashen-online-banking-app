@@ -16,16 +16,16 @@ export default function AboutPage() {
     // Handle any errors that might occur during page load
     const handleError = (event: ErrorEvent) => {
       console.error("Error caught in about page:", event.error)
-      setError("There was an error loading this page. You can continue to the Zemen Bank website or go back home.")
+      setError("There was an error loading this page. You can continue to the Dashen Bank website or go back home.")
     }
 
     window.addEventListener("error", handleError)
 
-    // Redirect to the Zemen Bank website after a brief delay if no errors
+    // Redirect to the Dashen Bank website after a brief delay if no errors
     const timer = setTimeout(() => {
       if (!error) {
         setIsRedirecting(true)
-        window.location.href = "https://zemenbank.com/about"
+        window.location.href = "https://dashenbank.com/about"
       }
     }, 2000)
 
@@ -49,8 +49,8 @@ export default function AboutPage() {
             <Link href="/">Go Home</Link>
           </Button>
           <Button asChild>
-            <a href="https://zemenbank.com/about" target="_blank" rel="noopener noreferrer">
-              Continue to Zemen Bank
+            <a href="https://dashenbank.com/about" target="_blank" rel="noopener noreferrer">
+              Continue to Dashen Bank
             </a>
           </Button>
         </div>
@@ -62,12 +62,12 @@ export default function AboutPage() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-primary-50 to-white p-4">
       <div className="text-center max-w-2xl">
         <h1 className="text-3xl font-bold text-primary mb-4">
-          {isRedirecting ? "Redirecting to Zemen Bank..." : "Welcome to Zemen Bank"}
+          {isRedirecting ? "Redirecting to Dashen Bank..." : "Welcome to Dashen Bank"}
         </h1>
         <p className="text-gray-600 mb-6">
           {isRedirecting
-            ? "You are being redirected to the official Zemen Bank website."
-            : "Loading information about Zemen Bank..."}
+            ? "You are being redirected to the official Dashen Bank website."
+            : "Loading information about Dashen Bank..."}
         </p>
         <div className="animate-pulse">
           <div className="h-2 w-32 bg-primary rounded mx-auto"></div>

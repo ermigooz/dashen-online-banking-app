@@ -66,7 +66,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] bg-gradient-to-b from-zemen-red/5 to-zemen-lightRed/5 page-transition">
+    <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] bg-gradient-to-b from-dashen-red/5 to-dashen-lightRed/5 page-transition">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -79,8 +79,8 @@ export default function LoginPage() {
             <div className="flex justify-center mb-4">
               <div className="h-20 w-20 flex items-center justify-center">
                 <Image
-                  src="/images/zemen-logo.png"
-                  alt="Zemen Bank Logo"
+                  src="/images/dashen-logo.png"
+                  alt="Dashen Bank Logo"
                   width={80}
                   height={80}
                   className="logo-glow"
@@ -89,7 +89,7 @@ export default function LoginPage() {
               </div>
             </div>
             <CardTitle className="text-2xl font-bold text-center">Welcome Back</CardTitle>
-            <CardDescription className="text-center">Sign in to access your Zemen Bank account</CardDescription>
+            <CardDescription className="text-center">Sign in to access your Dashen Bank account</CardDescription>
           </CardHeader>
           <CardContent>
             {error && (
@@ -116,14 +116,14 @@ export default function LoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="transition-all duration-200 focus:ring-2 focus:ring-zemen-red/50"
+                  className="transition-all duration-200 focus:ring-2 focus:ring-dashen-red/50"
                 />
               </div>
 
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <Label htmlFor="password">Password</Label>
-                  <Link href="/auth/forgot-password" className="text-xs text-zemen-red hover:underline">
+                  <Link href="/auth/forgot-password" className="text-xs text-dashen-red hover:underline">
                     Forgot password?
                   </Link>
                 </div>
@@ -133,13 +133,13 @@ export default function LoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="transition-all duration-200 focus:ring-2 focus:ring-zemen-red/50"
+                  className="transition-all duration-200 focus:ring-2 focus:ring-dashen-red/50"
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full transition-all duration-200 hover:shadow-md bg-gradient-to-r from-zemen-red to-zemen-lightRed hover:opacity-90"
+                className="w-full transition-all duration-200 hover:shadow-md bg-gradient-to-r from-dashen-red to-dashen-lightRed hover:opacity-90"
                 disabled={isLoading}
               >
                 {isLoading ? (
@@ -157,7 +157,7 @@ export default function LoginPage() {
           <CardFooter className="flex flex-col gap-4">
             <div className="text-sm text-muted-foreground text-center">
               Don't have an account?{" "}
-              <Link href="/auth/register" className="text-zemen-red hover:underline font-medium">
+              <Link href="/auth/register" className="text-dashen-red hover:underline font-medium">
                 Create Account
               </Link>
             </div>
@@ -173,7 +173,7 @@ export default function LoginPage() {
         </Card>
 
         <div className="mt-4 text-center">
-          <Button asChild variant="link" className="text-muted-foreground hover:text-zemen-red">
+          <Button asChild variant="link" className="text-muted-foreground hover:text-dashen-red">
             <Link href="/home">Continue as Guest</Link>
           </Button>
         </div>

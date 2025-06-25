@@ -17,6 +17,7 @@ interface AuthContextType {
   logout: () => void
   login: (user: User) => void
   isAuthenticated: boolean
+  mounted: boolean
 }
 
 // Create context
@@ -27,6 +28,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  // Set mounted state after hydration
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Check if user is logged in on initial load
   useEffect(() => {
@@ -169,7 +176,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <AuthContext.Provider value={{ user, loading, logout, login, isAuthenticated }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ user, loading, logout, login, isAuthenticated, mounted }}>{children}</AuthContext.Provider>
   )
 }
 

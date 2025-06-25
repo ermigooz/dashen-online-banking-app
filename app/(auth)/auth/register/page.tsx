@@ -83,11 +83,11 @@ export default function RegisterPage() {
     <div className="min-h-screen flex items-center justify-center p-4">
       {/* Animated background */}
       <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-zemen-red/5 via-zemen-lightRed/10 to-white" />
+        <div className="absolute inset-0 bg-gradient-to-br from-dashen-red/5 via-dashen-lightRed/10 to-white" />
 
         {/* Animated shapes */}
         <motion.div
-          className="absolute top-20 left-20 w-72 h-72 rounded-full bg-zemen-red/10 blur-3xl"
+          className="absolute top-20 left-20 w-72 h-72 rounded-full bg-dashen-red/10 blur-3xl"
           animate={{
             x: [0, 50, 0],
             y: [0, 30, 0],
@@ -99,7 +99,7 @@ export default function RegisterPage() {
           }}
         />
         <motion.div
-          className="absolute bottom-20 right-20 w-96 h-96 rounded-full bg-zemen-lightRed/10 blur-3xl"
+          className="absolute bottom-20 right-20 w-96 h-96 rounded-full bg-dashen-lightRed/10 blur-3xl"
           animate={{
             x: [0, -70, 0],
             y: [0, 50, 0],
@@ -126,8 +126,8 @@ export default function RegisterPage() {
             <div className="flex justify-center mb-4">
               <div className="h-16 w-16 flex items-center justify-center">
                 <Image
-                  src="/images/zemen-logo.png"
-                  alt="Zemen Bank Logo"
+                  src="/images/dashen-logo.png"
+                  alt="Dashen Bank Logo"
                   width={64}
                   height={64}
                   className="logo-glow"
@@ -135,7 +135,7 @@ export default function RegisterPage() {
               </div>
             </div>
             <CardTitle className="text-2xl font-bold text-center">Create Your Account</CardTitle>
-            <CardDescription className="text-center">Join Zemen Bank's diaspora community</CardDescription>
+            <CardDescription className="text-center">Join Dashen Bank's diaspora community</CardDescription>
           </CardHeader>
 
           <CardContent>
@@ -169,7 +169,7 @@ export default function RegisterPage() {
                       value={formData.fullName}
                       onChange={handleChange}
                       required
-                      className="transition-all duration-200 focus:ring-2 focus:ring-zemen-red/50"
+                      className="transition-all duration-200 focus:ring-2 focus:ring-dashen-red/50"
                     />
                   </div>
 
@@ -185,7 +185,7 @@ export default function RegisterPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="transition-all duration-200 focus:ring-2 focus:ring-zemen-red/50"
+                      className="transition-all duration-200 focus:ring-2 focus:ring-dashen-red/50"
                     />
                   </div>
 
@@ -200,7 +200,7 @@ export default function RegisterPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="transition-all duration-200 focus:ring-2 focus:ring-zemen-red/50"
+                      className="transition-all duration-200 focus:ring-2 focus:ring-dashen-red/50"
                     />
                   </div>
 
@@ -213,7 +213,7 @@ export default function RegisterPage() {
                         placeholder="United States"
                         value={formData.country}
                         onChange={handleChange}
-                        className="transition-all duration-200 focus:ring-2 focus:ring-zemen-red/50"
+                        className="transition-all duration-200 focus:ring-2 focus:ring-dashen-red/50"
                       />
                     </div>
                     <div className="space-y-2">
@@ -224,7 +224,7 @@ export default function RegisterPage() {
                         placeholder="New York"
                         value={formData.city}
                         onChange={handleChange}
-                        className="transition-all duration-200 focus:ring-2 focus:ring-zemen-red/50"
+                        className="transition-all duration-200 focus:ring-2 focus:ring-dashen-red/50"
                       />
                     </div>
                   </div>
@@ -232,7 +232,7 @@ export default function RegisterPage() {
                   <Button
                     type="button"
                     onClick={nextStep}
-                    className="w-full bg-gradient-to-r from-zemen-red to-zemen-lightRed hover:opacity-90"
+                    className="w-full bg-gradient-to-r from-dashen-red to-dashen-lightRed hover:opacity-90"
                   >
                     Continue
                   </Button>
@@ -252,7 +252,7 @@ export default function RegisterPage() {
                       value={formData.password}
                       onChange={handleChange}
                       required
-                      className="transition-all duration-200 focus:ring-2 focus:ring-zemen-red/50"
+                      className="transition-all duration-200 focus:ring-2 focus:ring-dashen-red/50"
                     />
                   </div>
 
@@ -267,7 +267,7 @@ export default function RegisterPage() {
                       value={formData.confirmPassword}
                       onChange={handleChange}
                       required
-                      className="transition-all duration-200 focus:ring-2 focus:ring-zemen-red/50"
+                      className="transition-all duration-200 focus:ring-2 focus:ring-dashen-red/50"
                     />
                   </div>
 
@@ -280,7 +280,7 @@ export default function RegisterPage() {
                     <Button
                       type="submit"
                       disabled={isLoading}
-                      className="flex-1 bg-gradient-to-r from-zemen-red to-zemen-lightRed hover:opacity-90"
+                      className="flex-1 bg-gradient-to-r from-dashen-red to-dashen-lightRed hover:opacity-90"
                     >
                       {isLoading ? (
                         <>
@@ -303,7 +303,7 @@ export default function RegisterPage() {
           <CardFooter className="flex flex-col gap-4">
             <div className="text-sm text-center">
               Already have an account?{" "}
-              <Link href="/auth/login" className="text-zemen-red hover:underline font-medium">
+              <Link href="/auth/login" className="text-dashen-red hover:underline font-medium">
                 Sign In
               </Link>
             </div>
@@ -311,7 +311,7 @@ export default function RegisterPage() {
         </Card>
 
         <div className="mt-4 text-center">
-          <Button asChild variant="link" className="text-muted-foreground hover:text-zemen-red">
+          <Button asChild variant="link" className="text-muted-foreground hover:text-dashen-red">
             <Link href="/home">Continue as Guest</Link>
           </Button>
         </div>
