@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbase Test</title>
+  <script>
+    window.embeddedChatbotConfig = {
+      chatbotId: "e_Bz-nHLJzJWVM5wsvD2v",
+      domain: "www.chatbase.co"
+    }
+  </script>
+  <script 
+    src="https://www.chatbase.co/embed.min.js" 
+    defer
+    chatbotId="e_Bz-nHLJzJWVM5wsvD2v">
+  </script>
+</head>
+<body>
+  <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+    <h1>Chatbase Test Page</h1>
+    <p>This page tests the Chatbase integration. You should see a chat bubble in the bottom right corner.</p>
+    
+    <button onclick="window.Chatbase && window.Chatbase.open()" style="margin-top: 20px; padding: 10px 20px; background-color: #0070f3; color: white; border: none; border-radius: 4px; cursor: pointer;">
+      Open Chatbot Manually
+    </button>
+    
+    <div style="margin-top: 40px; padding: 20px; background-color: #f5f5f5; border-radius: 8px;">
+      <h2>Troubleshooting</h2>
+      <p>If you don't see the chat bubble:</p>
+      <ul style="padding-left: 20px; margin-top: 10px;">
+        <li>Check the browser console for any errors</li>
+        <li>Verify that the Chatbase scripts are loading correctly</li>
+        <li>Try clearing your browser cache and refreshing</li>
+        <li>Ensure there are no content blockers preventing the scripts from loading</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

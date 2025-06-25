@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations and styles */
+.logo-glow {
+  filter: drop-shadow(0 0 15px rgba(216, 27, 96, 0.8));
+  animation: glow 3s ease-in-out infinite;
+}
+
+.zemen-gradient-text {
+  @apply bg-gradient-to-r from-zemen-red to-zemen-lightRed bg-clip-text text-transparent;
+}
+
+.zemen-card-border {
+  position: relative;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.zemen-card-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -1px;
+  border-radius: inherit;
+  background: linear-gradient(to right, #d81b60, #e91e63);
+  opacity: 0.1;
+  transition: opacity 0.3s ease;
+}
+
+.zemen-card-border:hover::before {
+  opacity: 0.2;
+}
+
+.gradient-animation {
+  background: linear-gradient(90deg, #d81b60, #e91e63, #b71c5a, #d81b60);
+  background-size: 300% 300%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(216, 27, 96, 0.7));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(216, 27, 96, 1));
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.bg-grid-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D81B60' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Transition utilities */
+.transition-all {
+  transition-property: all;
+}
+
+.duration-1500 {
+  transition-duration: 1500ms;
+}
+
+.bg-zemen-red\/10 {
+  background-color: rgba(216, 27, 96, 0.1);
+}
+
+.bg-zemen-yellow\/10 {
+  background-color: rgba(255, 206, 3, 0.1);
+}
+
+.bg-zemen-lightRed\/10 {
+  background-color: rgba(233, 30, 99, 0.1);
+}
+
+.text-zemen-red {
+  color: #d81b60;
+}
+
+.text-zemen-yellow {
+  color: #ffce03;
+}
+
+.text-zemen-lightRed {
+  color: #e91e63;
+}
+
+.border-zemen-red {
+  border-color: #d81b60;
+}
+
+.border-zemen-yellow {
+  border-color: #ffce03;
+}
+
+.border-zemen-lightRed {
+  border-color: #e91e63;
+}
+
+.hover\:bg-zemen-red\/10:hover {
+  background-color: rgba(216, 27, 96, 0.1);
+}
+
+.hover\:bg-zemen-yellow\/10:hover {
+  background-color: rgba(255, 206, 3, 0.1);
+}
+
+.hover\:bg-zemen-lightRed\/10:hover {
+  background-color: rgba(233, 30, 99, 0.1);
+}
