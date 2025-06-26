@@ -56,6 +56,9 @@ module.exports = {
           blue: "#2563EB", // Primary blue color
           darkBlue: "#1D4ED8", // Darker shade for hover states
           lightBlue: "#3B82F6", // Lighter shade for accents
+          red: "#D81B60", // Red accent for important elements
+          lightRed: "#E91E63", // Light red for gradients
+          darkRed: "#B71C5A", // Dark red for hover states
           gray: "#58595B", // Gray for text and secondary elements
           lightGray: "#F5F5F5", // Light gray for backgrounds
         },
@@ -82,4 +85,10 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
+  safelist: [
+    // Safelist dynamic color classes
+    'bg-blue-100', 'text-blue-600', 'bg-green-100', 'text-green-600',
+    'bg-purple-100', 'text-purple-600', 'bg-orange-100', 'text-orange-600',
+    'text-blue-600', 'text-green-600', 'text-purple-600', 'text-orange-600'
+  ]
 }

@@ -15,7 +15,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { LogOut, User, Menu, X, Bell, Calendar, BarChart3, HelpCircle, CreditCard } from "lucide-react"
+import { LogOut, User, Menu, X, Bell, Calendar, BarChart3, HelpCircle, CreditCard, Smartphone, Send, TrendingUp } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
 import NotificationBell from "./notifications/notification-bell"
@@ -49,6 +49,9 @@ export default function Header() {
   const navItems = [
     { href: "/dashboard", label: "Dashboard", icon: BarChart3 },
     { href: "/financial-tools", label: "Financial Tools", icon: CreditCard },
+    { href: "/investment-opportunities", label: "Investments", icon: TrendingUp },
+    { href: "/remittance", label: "Remittance", icon: Send },
+    { href: "/mobile-banking", label: "Mobile Banking", icon: Smartphone },
     { href: "/events", label: "Events", icon: Calendar },
     { href: "/notifications", label: "Notifications", icon: Bell },
     { href: "/faq", label: "FAQs & Support", icon: HelpCircle },
@@ -94,8 +97,8 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-1">
-          {navItems.map((item, index) => (
+        <nav className="hidden lg:flex items-center space-x-1">
+          {navItems.slice(0, 6).map((item, index) => (
             <motion.div
               key={item.href}
               initial={{ y: -10, opacity: 0 }}
@@ -182,50 +185,52 @@ export default function Header() {
           )}
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
+          <div className="lg:hidden">
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" aria-label="Toggle menu">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-80">
+                <SheetHeader>
+                  <SheetTitle className="flex items-center gap-2">
+                    <Image
+                      src="/images/dashen-logo.png"
+                      alt="Dashen Bank Logo"
+                      width={24}
+                      height={24}
+                      className="w-6 h-6"
+                    />
+                    Dashen Bank
+                  </SheetTitle>
+                  <SheetDescription>
+                    Navigate through our banking services
+                  </SheetDescription>
+                </SheetHeader>
+                <nav className="mt-6 space-y-2">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={cn(
+                        "flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                        pathname === item.href
+                          ? "bg-dashen-blue/10 text-dashen-blue"
+                          : "text-muted-foreground hover:text-foreground hover:bg-accent",
+                      )}
+                    >
+                      <item.icon className="h-4 w-4 mr-2" />
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-white border-t"
-          >
-            <nav className="container py-4 space-y-2">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={cn(
-                    "flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors",
-                    pathname === item.href
-                      ? "bg-dashen-blue/10 text-dashen-blue"
-                      : "text-muted-foreground hover:text-foreground hover:bg-accent",
-                  )}
-                >
-                  <item.icon className="h-4 w-4 mr-2" />
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </header>
   )
 }
